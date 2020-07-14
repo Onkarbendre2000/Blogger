@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth">
+  
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="/assets/bootstrap.css">
+  <link rel="stylesheet" href="/assets/profile.css">
+  <link rel="stylesheet" href="/assets/view.css">
+</head>
+<body style="background-color: rgb(238, 238, 238);">
+<div class="container" style="display: flex;justify-content: center;align-items: center;margin-top: 1.5vh;">
+    <div style="padding: 3%;box-shadow: 1px 1px 5px 5px grey;width: 60%;background-color: rgb(255, 255, 255);">
+        <h2>FEEDBACK FORM</h2>
+    <form action="/feed" method="POST" style="margin-top: 10%;">
+        <div style="padding: 1%;width: auto;border: 1px solid black;">
+        <p>Is this the 1st time you visited our website?</p>
+        <div class="form-group">
+           <input type="radio" value="Intuitive" name="fv" checked>&nbsp;Yes
+        </div>
+        <div class="form-group">
+         <input type="radio" value="Intuitive" name="fv">&nbsp;No
+         </div>
+        </div>
+        <div style="padding: 1%;width: auto;border: 1px solid black;margin-top: 2%;">
+            <p>How was the User friendliness?</p>
+            <div class="form-group">
+                <input type="radio" value="Intuitive" name="uf" checked>&nbsp;Intuitive
+            </div>
+            <div class="form-group">
+                 <input type="radio" value="Intuitive" name="uf">&nbsp;Clunky
+             </div>
+            </div>
+            <div style="padding: 1%;width: auto;border: 1px solid black;margin-top: 2%;">
+                <p>How was your overall experience?</p>
+                <div class="form-group">
+                    <input type="radio" value="Intuitive" name="oe" checked>&nbsp;Very Good   
+                </div>
+                <div class="form-group">
+                     <input type="radio" value="Intuitive" name="oe">&nbsp;Good
+                 </div>
+                 <div class="form-group">
+                     <input type="radio" value="Intuitive" name="oe">&nbsp;Bad
+                 </div>
+                 <div class="form-group">
+                       <input type="radio" value="Intuitive" name="oe">&nbsp;Very Bad
+                 </div>
+                </div>
+                <div style="padding: 1%;width: auto;margin-top: 2%;">
+                    <textarea name ="add" class="form-control" style="width: 100%;height: 120px;resize: none;background-color:rgb(250, 251, 251);" placeholder="Tell us something to improve on..."></textarea>
+                </div>
+                    <div style="margin: auto;width: 100%;display: flex;justify-content: center;">
+                        <input type="submit" class="btn btn-success" style="margin: auto;" value="Submit">
+                  </div>
+    </form>
+</div>
+</div>
+<footer class="foot" style="margin-top: 2%;">
+    <div class="footdiv">
+      <a href="/view" class="linkfoot" ><button type="button " class="btn linksfoot">Home</button></a>
+      <a href="/contact"class="linkfoot" ><button type="button" class="btn linksfoot">Contact Us</button></a>
+      <a href="/aboutus"class="linkfoot" ><button type="button" class="btn linksfoot">About Us</button></a>
+      <a href="/sitemap"class="linkfoot" ><button type="button" class="btn linksfoot">Site Map</button></a>
+      <a href="/term" class="linkfoot"><button type="button" class="btn linksfoot">Terms And Conditions</button></a>
+      <a href="/feedback" class="linkfoot"><button type="button" class="btn linksfoot" style="border: none;">Feedback</button></a>
+    </div>
+    <div style="margin-top: 2%;font-size: 0.8rem;">
+      Copyright &copy; Blogspot 2020
+    </div>
+</footer> 
+
+</body>

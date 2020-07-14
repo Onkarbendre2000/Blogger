@@ -1,0 +1,109 @@
+.btn{
+    color: white;
+}
+.btn:hover{
+    color: white;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    font-weight: 800;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.navv{
+   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/home.jpg');
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20%;
+    height: 70vh;
+    
+    background-size: cover;
+    padding-top: 20px;
+}
+.container{
+    margin-top: 6%;
+    padding-left: 2%;
+}
+.link{
+    height: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.linkfoot{
+  color: black;
+  font-size: 0.5rem;
+}
+.linksfoot{
+  border-right: 0.2px solid rgb(219, 219, 219);
+  border-radius:0px;
+color: black;
+font-size: 0.8rem;
+}
+.linksfoot:hover{
+  color: black;
+}
+.foot{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  height: auto;
+  border: 1px solid rgb(219, 219, 219);
+  border-bottom: none;
+  width: 100%;
+}
+.media-heading{
+    font-weight: 800;
+    font-size: 2.8rem;
+    color: rgb(71, 71, 71);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.links{
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.links:hover{
+  color: rgb(167, 167, 167);
+}
+.btn:focus{
+  box-shadow: none;
+}

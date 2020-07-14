@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <?xml-stylesheet type="text/xsl" href="style_sitemap.xsl"?>
+<sitemap>
+<heading>
+    BLOGGING PLATFORM
+</heading>
+<data>
+    <entry1 link="#">FeedBack</entry1>
+
+<entry2 link="#">Sign In</entry2>
+<entry3 link="#">Home Page</entry3>
+</data>
+<data>
+    <entry1 link="#">Contact Us</entry1>
+<entry2 link="#">Sign Up</entry2>
+<entry3 link="#">New Blog</entry3>
+</data>
+<data>
+<entry1 link="#">Terms And Conditions</entry1>
+</data>
+</sitemap>

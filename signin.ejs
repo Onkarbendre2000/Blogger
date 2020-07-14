@@ -1,0 +1,90 @@
+<link href="/assets/bootstrap.css" rel="stylesheet">
+<link href="/assets/signin.css" rel="stylesheet">
+<script>
+   var ans;
+   function fun() {
+      <% if(fail){ %>
+         alert("Invalid Credentials")
+      <% } %>
+      var x = document.getElementById('captcha_1');
+      ans = Math.random().toString(36).substr(2, 5);
+      var y = document.getElementById('captcha').value = ""
+      x.value = ans;
+      setInterval(check,500);
+   }
+   function check() {
+      var y = document.getElementById('captcha')
+      if (y.value === ans) {
+         document.getElementById('sub').disabled = false;
+         document.getElementById('status').src = "https://img.icons8.com/color/48/000000/ok--v1.png";
+         document.getElementById('status').style.display = "block"
+      }
+      else {
+         document.getElementById('sub').disabled = true;
+         document.getElementById('status').src ="https://img.icons8.com/flat_round/64/000000/delete-sign.png"
+         document.getElementById('status').style.display = "block"
+      }
+   }
+
+</script>
+
+<body onload="fun()">
+   <div class="container-fluid"  style="width: 100%;margin-left: 0px;">
+      <div class="row">
+         <div class="sidenavv col-md-6 col-lg-6"
+            style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/home.jpg');;background-size: cover;">
+         </div>
+         <div class="col-md-6 col-lg-6" style="display: flex;flex-direction: column;align-items: center;">
+            <div class="col-md-4 col-sm-12">
+               <div class="login-form">
+                  <h4>Welcome Back!</h4>
+                  <form method="POST" action="/signin">
+                     <div class="form-group mt-5">
+                        <input type="text" class="form-control fo" name="user" placeholder="Username"
+                           title="Enter Registered Username"onfocus="this.placeholder=''"onblur="this.placeholder='Username'" autocomplete="off" required>
+                     </div>
+                     <div class="form-group">
+
+                        <input type="password" class="form-control fo mt-2" name="pass" placeholder="Password"onfocus="this.placeholder=''"onblur="this.placeholder='Paasword'"autocomplete="off" required>
+                     </div>
+                     <div class="row ml-1 mt-4">
+                        <input type="text" class="col-lg-6 col-md-6 form-control" id="captcha_1"
+                           style="height: 7vh;resize: none;text-align:center;font-size:1.7rem;border:none" disabled>
+                        <input type="text" class="col-lg-5 col-md-5 form-control cap" id="captcha"
+                           style="height: 7vh;text-align:center;font-size:1.2rem;color:black;margin-left:3%" 
+                           onchange="check()" title="Enter Characters Shown in the Image" autocomplete="off" required>
+                        <img id="status"src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"
+                           style="height:15px;width: 15px;display: none;margin: auto;">
+                     </div>
+                     <div class="form-group mt-4" style="font-size: 1.1rem;">
+                        <center>By signing in you accept our</center><center><a href="/terms">Terms Of Use</a></center>
+                     </div>
+                     <div class="form-group mt-3">
+                      <center> <input type="checkbox" name="rem" value="rem"><span class="ml-3">Remember Me</span></center>
+                     </div>
+                     <button type="submit" id="sub" class="btn btn-black log mt-2">SIGN IN</button>
+                  </form>
+                  <div class="ml-4" style="width: 100%;display: flex;justify-content: center;"><a href="/forgot"
+                        title="Reset Password" style="font-size: 0.9rem;">Forgot Password?</a></div>
+               </div>
+            </div>
+           <div style="margin-top: 13%;margin-left: 10%"><a href="/register" class="reg" style="color: black;" title="Register">Create Your Account <img src="https://img.icons8.com/material-sharp/24/000000/long-arrow-right.png"></a> </div>
+         </div>
+      </div>
+
+   </div>
+   <footer class="foot">
+      <div class="footdiv">
+         <a href="/view" class="linkfoot"><button type="button " class="btn linksfoot">Home</button></a>
+         <a href="/contact" class="linkfoot"><button type="button" class="btn linksfoot">Contact Us</button></a>
+         <a href="/aboutus" class="linkfoot"><button type="button" class="btn linksfoot">About Us</button></a>
+         <a href="/sitemap" class="linkfoot"><button type="button" class="btn linksfoot">Site Map</button></a>
+         <a href="/terms" class="linkfoot"><button type="button" class="btn linksfoot" style="border: none;">Terms And
+               Conditions</button></a>
+      </div>
+      <div style="margin-top: 2%;font-size: 0.8rem;">
+         Copyright &copy; Blogspot 2020
+      </div>
+
+   </footer>
+</body>

@@ -1,0 +1,113 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
+/* .main-head{
+    height: 150px;
+    background: #FFF;
+   
+} */
+.btn:focus{
+    box-shadow: none;
+}
+.sidenavv {
+    height: 110vh;
+    background-color: #000;
+    overflow-x: hidden;
+} 
+.linkfoot{
+    color: black;
+    font-size: 0.5rem;
+  }
+  .linksfoot{
+    border-right: 0.2px solid rgb(219, 219, 219);
+    border-radius:0px;
+  color: black;
+  font-size: 0.8rem;
+  }
+  .linksfoot:hover{
+    color: black;
+  }
+  .cap:focus{
+      box-shadow: none;
+  }
+  .cap{
+      box-shadow: none;
+  }
+  .fo{
+      border-radius: 50px;
+      width: 17vw;
+      height: 50px;
+  }
+  .fo:focus{
+      box-shadow: 0px 0px 0px 1px rgb(128, 128, 255);
+    -webkit-animation: anim-shadow 1s ease-in-out forwards;
+    animation: anim-shadow 1s ease-in-out forwards;   
+    
+  }
+  
+  .log{
+    border-radius: 50px;
+    width: 17vw;
+    height: 50px;
+  }
+  .log:hover{
+      color: white;
+  }
+  .foot{
+    padding-top: 1%;
+    padding-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    border: 1px solid rgb(219, 219, 219);
+    width: 100%;
+  }
+.main {
+    height: 35vh;
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 80%;
+    }
+    .login-form1{
+        margin-top: 30%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h2{
+    font-weight: 300;
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}

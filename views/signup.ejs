@@ -1,0 +1,159 @@
+<link href="/assets/bootstrap.css" rel="stylesheet">
+<link href="/assets/signin.css" rel="stylesheet">
+<script>
+   var ans;
+   function fun() {
+      var x = document.getElementById('captcha_1');
+      ans = Math.random().toString(36).substr(2, 5);
+      var y = document.getElementById('captcha').value = ""
+      x.value = ans;
+      setInterval(myfun,500);
+   }
+   function myfun() {
+    document.getElementById('sub').disabled = true;
+      var user = document.getElementById("username").value
+      var email = document.getElementById("email").value
+      var flag = false;
+      var flag1 = false;
+      var reg = /^[a-z ]+$/i;
+      var name = document.getElementById("namem");
+      var paa = document.getElementById("paa");
+      var paa1 = document.getElementById("paa1");
+      var fff = paa.value===paa1.value;
+      var ff = reg.test(name.value);
+      console.log(ff);
+  <% data.username.forEach(function (ele) { %>
+    var us = <%-JSON.stringify(ele.username) %>
+    var em = <%-JSON.stringify(ele.email) %>
+    if (us.toLowerCase() === user.toLowerCase()) {
+          flag = true;
+        }
+   if(em.toLowerCase() === email.toLowerCase()) {
+      flag1 = true;
+   }
+    <% }); %>
+
+ 
+
+    if (flag) {
+        document.getElementById("username").style.border= "thin solid red"
+        document.getElementById("username").title = "Username Unavailable"
+      }
+      else {
+        if(user.length>0){
+        document.getElementById("username").style.border = "thin solid green"
+        document.getElementById("username").title = "Username Available"
+        }
+      }
+     // console.log(flag1);
+      if (flag1) {
+         document.getElementById("email").style.border= "thin solid red"
+         document.getElementById("email").title = "Email ID already registered!"
+      }
+      else {
+        if(email.length>0){
+         document.getElementById("email").style.border = "thin solid green"
+         document.getElementById("email").title = "Welcome!"
+        }
+      }
+      if(ff || name.value==="") {name.style.border = document.getElementById("paa").style.border;name.title = "Name"}
+      else {name.style.border = "1px solid red";name.title = "Name should only contain alphabets!"}
+      if(fff){ paa1.style.border=paa.style.border;paa1.title = "Confirm Password"}
+      else {paa1.style.borderColor = "red";paa1.title = "Passwords don't match"}
+      var y = document.getElementById('captcha')
+      if (y.value === ans) {
+
+         document.getElementById('status').src = "https://img.icons8.com/color/48/000000/ok--v1.png";
+        
+         document.getElementById('status').style.display = "block"
+      }
+      else {
+         document.getElementById('status').src ="https://img.icons8.com/flat_round/64/000000/delete-sign.png"
+         document.getElementById('status').style.display = "block"
+      }
+     
+      if(flag==false && y.value===ans && flag1==false && ff && fff) {
+        document.getElementById('sub').disabled = false;
+      }
+      else {
+        document.getElementById('sub').disabled = true;
+      }
+    }
+
+
+</script>
+
+<body onload="fun()">
+   <div class="container-fluid"  style="width: 100%;margin-left: 0px;">
+      <div class="row">
+         <div class="sidenavv col-md-6 col-lg-6"
+            style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/home.jpg');;background-size: cover;">
+         </div>
+         <div class="col-md-6 col-lg-6" style="display: flex;flex-direction: column;align-items: center;">
+            <div class="col-md-4 col-sm-12">
+               <div class="login-form1">
+                  <h4>Welcome!</h4>
+                  <form method="POST" action="/succ">
+                     <div class="form-group mt-5">
+                        <input type="text" class="form-control fo" name="user" placeholder="Enter Username" id="username"
+                           title="Enter Username"onfocus="this.placeholder=''"onblur="this.placeholder='Enter Username'" autocomplete="off" required>
+                        
+                        </div>
+                        <div class="form-group">
+
+                            <input type="email" class="form-control fo mt-2" name="email" id="email" placeholder="Enter Email"onfocus="this.placeholder=''"onblur="this.placeholder='Enter Email'"autocomplete="off" required>
+                         </div>
+                         <div class="form-group">
+                            <input type="text" class="form-control fo mt-2" id="namem"name="name" placeholder="Enter Name"onfocus="this.placeholder=''"onblur="this.placeholder='Enter Name'"autocomplete="off" required>
+                         </div>
+                         <div class="form-group">
+                            <input type="date" class="form-control fo mt-2" name="bd" placeholder="Enter Birthdate"onfocus="this.placeholder=''"onblur="this.placeholder='Enter Birthdate'"autocomplete="off" required>
+                         </div>
+                     <div class="form-group">
+
+                        <input type="password" class="form-control fo mt-2" id = "paa"name="pass" placeholder="Enter Password"onfocus="this.placeholder=''"onblur="this.placeholder='Enter Paasword'"autocomplete="off" required minlength="6">
+                     </div>
+                  </div>
+                  <div class="form-group">
+
+                     <input type="password" class="form-control fo mt-2" id = "paa1"name="pass" placeholder="Confirm Password"onfocus="this.placeholder=''"onblur="this.placeholder='Confirm Paasword'"autocomplete="off" required minlength="6">
+                  </div>
+                     <div class="row ml-1 mt-4">
+                        <input type="text" class="col-lg-6 col-md-6 form-control" id="captcha_1"
+                           style="height: 7vh;resize: none;text-align:center;font-size:1.7rem;border:none" disabled>
+                        <input type="text" class="col-lg-5 col-md-5 form-control cap" id="captcha"
+                           style="height: 7vh;text-align:center;font-size:1.2rem;color:black;margin-left:3%" 
+                           onchange="check()" title="Enter Characters Shown in the Image" autocomplete="off" required>
+                        <img id="status"src="https://img.icons8.com/flat_round/64/000000/delete-sign.png"
+                           style="height:15px;width: 15px;display: none;margin: auto;">
+                     </div>
+                     <div class="form-group mt-4" style="font-size: 1.1rem;">
+                        <center>By signing up you accept our</center><center><a href="/term">Terms Of Use</a></center>
+                     </div>
+                     
+                     <button type="submit" id="sub" class="btn btn-black log mt-2" > SIGN UP</button>
+                  </form>
+                  <div class="ml-4" style="width: 100%;display: flex;justify-content: center;"><a href="/forgot"
+                        title="Reset Password" style="font-size: 0.9rem;">Forgot Password?</a></div>
+               </div>
+            </div>
+           <div style="margin-left: 70%"><a href="/signin" class="reg" style="color: black;" title="Register">Already have an Account?<img src="https://img.icons8.com/material-sharp/24/000000/long-arrow-right.png"></a> </div>
+         </div>
+      </div>
+
+   </div>
+   <footer class="foot">
+      <div class="footdiv">
+        <a href="/view" class="linkfoot" ><button type="button " class="btn linksfoot">Home</button></a>
+        <a href="/contact"class="linkfoot" ><button type="button" class="btn linksfoot">Contact Us</button></a>
+        <a href="/aboutus"class="linkfoot" ><button type="button" class="btn linksfoot">About Us</button></a>
+        <a href="/sitemap"class="linkfoot" ><button type="button" class="btn linksfoot">Site Map</button></a>
+        <a href="/term" class="linkfoot"><button type="button" class="btn linksfoot">Terms And Conditions</button></a>
+        <a href="/feedback" class="linkfoot"><button type="button" class="btn linksfoot" style="border: none;">Feedback</button></a>
+      </div>
+      <div style="margin-top: 2%;font-size: 0.8rem;">
+        Copyright &copy; Blogspot 2020
+      </div>
+  </footer> 
+   <p style="right:0;font-size: 0.7rem;position: absolute;">Best Viewd in:1920 x 1080</p>
+</body>
