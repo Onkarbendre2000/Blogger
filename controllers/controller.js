@@ -282,7 +282,7 @@ Eai7tcX6z0WSCnAWDj4NXQ==
         blogg.findOneAndUpdate({link:'blog/'+req.params.title+'/'},{$inc : {'views' : 1}}, function(err,doc){
         })
         blogg.find({link:'blog/'+req.params.title+'/'},function(err,doc){
-            fs.writeFile('/home/daredevil/Project/assets/test.html', doc[0].post, function (err) {
+            fs.writeFile('./assets/test.html', doc[0].post, function (err) {
                 if (err) throw err;
               }); 
               var uuu="";
