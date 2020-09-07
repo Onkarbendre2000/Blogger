@@ -188,7 +188,6 @@ Eai7tcX6z0WSCnAWDj4NXQ==
         var email = req.body.email;
         var birth = req.body.bd;
         var pass = req.body.pass;
-        pass = md5(pass);
         userss({username:username,name:name,email:email,birth:birth}).save();
         logm({username:username,password:pass}).save();
         res.redirect('signin');
@@ -401,13 +400,13 @@ Eai7tcX6z0WSCnAWDj4NXQ==
        else {res.end("Error");}
     })
     app.post('/signin', function (req, res) {
-        logm.findOne({ username: req.body.user, password: md5(req.body.pass) }, function (err, doc) {
+        logm.findOne({ username: req.body.user, password: req.body.pass}, function (err, doc) {
             if (doc) {
             
                 if(req.body.rem==="rem")
-                res.cookie('userdata', { username: req.body.user, password: md5(req.body.pass) },{maxAge: 2628000000});
+                res.cookie('userdata', { username: req.body.user, password: req.body.pass },{maxAge: 2628000000});
                 else 
-                res.cookie('userdata', { username: req.body.user, password:md5(req.body.pass) });
+                res.cookie('userdata', { username: req.body.user, password:req.body.pass });
                 res.redirect('/view')
             }
             else {
